@@ -1,7 +1,7 @@
 .PHONY: all build-test test version-set chart-ver-set release
 .PHONY: test-latest gh-latest-build-id check GH-exists
 
-GITHUB_ACTOR ?= kingdonb
+GITHUB_ACTOR ?= yebyen
 
 # app version
 TAG ?= latest
@@ -29,6 +29,7 @@ test:
 # Try running `brew install gh` if this errors out
 check: GH-exists
 GH-exists: ; @which gh > /dev/null
+# Also try running `gh repo set-default` (and set it to your fork)
 
 gh-latest-build-id: check
 	@set -e ;\
